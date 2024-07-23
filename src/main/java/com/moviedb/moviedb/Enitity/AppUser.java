@@ -6,14 +6,14 @@ import lombok.Data;
 import java.util.List;
 @Data
 @Entity
-public class User {
+public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String username;
     private String password;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "app_user")
     private List<Rating> ratings;
 
     // Getters and setters

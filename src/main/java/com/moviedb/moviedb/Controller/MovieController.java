@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.moviedb.moviedb.Enitity.Movie;
 import com.moviedb.moviedb.Services.MovieApiClient;
 
 import reactor.core.publisher.Mono;
@@ -15,12 +14,11 @@ public class MovieController {
     @Autowired
     MovieApiClient movieApiClient;
 
-    @GetMapping("/movie/{id}")
-    public Mono<Movie> getMovie(@PathVariable long id){
-        
-        return movieApiClient.getMovieById(id);
+    @GetMapping("/movie/{imdbId}")
+    public Mono<String> getMovie(@PathVariable String imdbId) {
+        return movieApiClient.getMovieById(imdbId);
     }
 
-    
+
 
 }

@@ -13,7 +13,7 @@ public class Rating {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User user;
+    private AppUser app_user;
 
     @ManyToOne
     @JoinColumn(name = "movie_id")
